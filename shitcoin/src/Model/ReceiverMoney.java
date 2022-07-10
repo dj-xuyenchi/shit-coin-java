@@ -14,6 +14,7 @@ public class ReceiverMoney {
     private String bankNickName;
     private String accountName;
     private String accountId;
+   
 
     public ReceiverMoney() {
     }

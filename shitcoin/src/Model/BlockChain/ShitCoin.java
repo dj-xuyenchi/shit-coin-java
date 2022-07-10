@@ -20,7 +20,7 @@ public class ShitCoin {
 
     public ShitCoin() {
         _chain = new ArrayList<>();
-        _chain.add(new DataTransaction(1, "ts01", new SourceMoney("1", "1", "1", "1", "0"), new ReceiverMoney("1", "1", "1", "1"), "10/07/2022", "Create Chain"));
+        _chain.add(new DataTransaction(1, "ts01", new SourceMoney("1", "1", "1", "1"), new ReceiverMoney("1", "1", "1", "1"), "10/07/2022", "10","Create Chain"));
     }
 
     public List<DataTransaction> getList() {

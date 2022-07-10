@@ -14,26 +14,20 @@ public class SourceMoney {
     private String bankNickName;
     private String accountName;
     private String accountId;
-    private String money;
+    
 
     public SourceMoney() {
     }
 
-    public SourceMoney(String bankName, String bankNickName, String accountName, String accountId, String money) {
+    public SourceMoney(String bankName, String bankNickName, String accountName, String accountId) {
         this.bankName = bankName;
         this.bankNickName = bankNickName;
         this.accountName = accountName;
         this.accountId = accountId;
-        this.money = money;
+     
     }
 
-    public String getMoney() {
-        return money;
-    }
-
-    public void setMoney(String money) {
-        this.money = money;
-    }
+   
 
     public String getBankNickName() {
         return bankNickName;
@@ -69,7 +63,7 @@ public class SourceMoney {
 
     @Override
     public String toString() {
-        return bankNickName + "-" + accountId + "-" + money;
+        return bankNickName + "-" + accountId + "-";
     }
 
 }
