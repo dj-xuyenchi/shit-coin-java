@@ -20,7 +20,7 @@ public class ShitCoin {
 
     public ShitCoin() {
         _chain = new ArrayList<>();
-        _chain.add(new DataTransaction(1, "", new SourceMoney("", "", "", "", "0"), new ReceiverMoney("", "", "", ""), "10/07/2022", "Create Chain"));
+        _chain.add(new DataTransaction(1, "ts01", new SourceMoney("1", "1", "1", "1", "0"), new ReceiverMoney("1", "1", "1", "1"), "10/07/2022", "Create Chain"));
     }
 
     public List<DataTransaction> getList() {
@@ -28,24 +28,32 @@ public class ShitCoin {
     }
 
     private DataTransaction getLastestBlock() {
-        return _chain.get(_chain.size()-1);
+        return _chain.get(_chain.size() - 1);
     }
 
     public void addNewBlock(DataTransaction d) {
         d.setPreHash(getLastestBlock().getHash());
         _chain.add(d);
     }
-    public void printlnAllBlock(){
+
+    public void printlnAllBlock() {
         for (DataTransaction dataTransaction : _chain) {
             System.out.println(dataTransaction.toString());
+            System.out.println("");
         }
     }
-    public boolean isHacked(){
-        for (int i = 1; i < _chain.size()-1; i++) {
-            if(!(_chain.get(i).getPreHash().equals(_chain.get(i-1).getHash()))){
-                return false;
+
+    public boolean isHacked() {
+        boolean valid = true;
+        for (int i = 1; i < _chain.size(); i++) {
+            if (!(_chain.get(i).getPreHash().equals(_chain.get(i - 1).getHash()))) {
+                System.out.println("PreHas Block " + _chain.get(i).getBlockCount() + " is not equal Hash Block " + _chain.get(i - 1).getBlockCount());
+                valid = false;
             }
         }
-        return true;
+        if(!valid){
+            System.out.println("Hacked");
+        }
+        return valid;
     }
 }

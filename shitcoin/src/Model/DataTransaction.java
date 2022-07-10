@@ -4,6 +4,14 @@
  */
 package Model;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 /**
  *
  * @author PC
@@ -18,6 +26,8 @@ public class DataTransaction {
     private ReceiverMoney nguoiNhanTien;
     private String transactionDateTime;
     private String detailTransaction;
+    private int remakeHashKey = 0;
+    private int difficult = 5;
 
     public DataTransaction() {
     }
@@ -29,7 +39,20 @@ public class DataTransaction {
         this.nguoiNhanTien = nguoiNhanTien;
         this.transactionDateTime = transactionDateTime;
         this.detailTransaction = detailTransaction;
-        this.Hash=calculHash();
+        try {
+            this.Hash = calculHash();
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public int getBlockCount() {
@@ -38,6 +61,19 @@ public class DataTransaction {
 
     public void setBlockCount(int blockCount) {
         this.blockCount = blockCount;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getPreHash() {
@@ -46,6 +82,19 @@ public class DataTransaction {
 
     public void setPreHash(String preHash) {
         this.preHash = preHash;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getHash() {
@@ -62,6 +111,19 @@ public class DataTransaction {
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public SourceMoney getNguoiChuyenTien() {
@@ -70,6 +132,19 @@ public class DataTransaction {
 
     public void setNguoiChuyenTien(SourceMoney nguoiChuyenTien) {
         this.nguoiChuyenTien = nguoiChuyenTien;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ReceiverMoney getNguoiNhanTien() {
@@ -78,6 +153,19 @@ public class DataTransaction {
 
     public void setNguoiNhanTien(ReceiverMoney nguoiNhanTien) {
         this.nguoiNhanTien = nguoiNhanTien;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getTransactionDateTime() {
@@ -86,6 +174,19 @@ public class DataTransaction {
 
     public void setTransactionDateTime(String transactionDateTime) {
         this.transactionDateTime = transactionDateTime;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public String getDetailTransaction() {
@@ -94,15 +195,43 @@ public class DataTransaction {
 
     public void setDetailTransaction(String detailTransaction) {
         this.detailTransaction = detailTransaction;
+        try {
+            this.Hash = mineMachine(difficult);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeyException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalBlockSizeException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BadPaddingException ex) {
+            Logger.getLogger(DataTransaction.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    private String calculHash() {
-        return "00" + blockCount + "-PK-" + nguoiChuyenTien.toString() + "-FK-" + nguoiNhanTien.toString() + "-FK-" + transactionDateTime + "-" + "{" + detailTransaction + "}" + "-" + transactionId;
+    private String mineMachine(int difficult) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+        String s = "";
+        for (int i = 0; i < difficult; i++) {
+            s += "0";
+        }
+        while (!this.Hash.substring(0, difficult).endsWith(s)) {
+            remakeHashKey++;
+            this.Hash = calculHash();
+        }
+        return this.Hash;
+    }
+
+    private String calculHash() throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+
+        String temp = blockCount + preHash + transactionId + nguoiChuyenTien.toString() + nguoiNhanTien.toString() + transactionDateTime + detailTransaction + remakeHashKey;
+        return Sha256.sha256(temp);
+
     }
 
     @Override
     public String toString() {
-        return "DataTransaction{" + "blockCount=" + blockCount + ", preHash= " + preHash + "********* Hash= " + Hash +"}";
+        return this.preHash + "\n" + this.Hash;
     }
 
 }
